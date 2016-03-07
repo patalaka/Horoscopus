@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aries">Овен</string>
+    <string name="taurus">Телец</string>
+    <string name="gemini">Близнецы</string>
+    <string name="cancer">Рак</string>
+    <string name="leo">Лев</string>
+    <string name="virgo">Дева</string>
+    <string name="libra">Весы</string>
+    <string name="scorpio">Скорпион</string>
+    <string name="sagittarius">Стрелец</string>
+    <string name="capricorn">Козерог</string>
+    <string name="aquarius">Водолей</string>
+    <string name="pisces">Рыбы</string>
+
+    <string name="date_aries">3/21 по 4/19</string>
+    <string name="date_taurus">4/20 по 5/20</string>
+    <string name="date_gemini">5/21 по 6/20</string>
+    <string name="date_cancer">6/21 по 7/22</string>
+    <string name="date_leo">7/23 по 8/22</string>
+    <string name="date_virgo">8/23 по 9/22</string>
+    <string name="date_libra">9/23 по 10/22</string>
+    <string name="date_scorpio">10/23 по 11/21</string>
+    <string name="date_sagittarius">11/22 по 12/21</string>
+    <string name="date_capricorn">12/22 по 1/19</string>
+    <string name="date_aquarius">1/20 по 2/18</string>
+    <string name="date_pisces">2/19 по 3/20</string>
+
+    <string name="status_aries">Я Есть! Ключевая особенность - предприимчивость.</string>
+    <string name="status_taurus">Я приобретаю! Ключевая особенность - практичность.</string>
+    <string name="status_gemini">Я думаю! Ключевая особенность - ловкость.</string>
+    <string name="status_cancer">Я чувствую! Ключевая особенность - чувство.</string>
+    <string name="status_leo">Я Буду! Ключевая особенность - самовыражение.</string>
+    <string name="status_virgo">Я анализирую! Ключевая особенность - усердие.</string>
+    <string name="status_libra">Я уравновешиваю! Ключевая особенность - сдержанность.</string>
+    <string name="status_scorpio">Я хочу! Ключевая особенность - проницательность.</string>
+    <string name="status_sagittarius">Я вижу! Ключевая особенность - прямолинейность.</string>
+    <string name="status_capricorn">Я способный! Ключевая особенность - осторожность.</string>
+    <string name="status_aquarius">Я знаю! Ключевая особенность - нетрадиционность.</string>
+    <string name="status_pisces">Я верю! Ключевая особенность - мечтательность.</string>
+
+
+    <string-array name="all_zodiacs">
+        <item>@string/aries</item>
+        <item>@string/taurus</item>
+        <item>@string/gemini</item>
+        <item>@string/cancer</item>
+        <item>@string/leo</item>
+        <item>@string/virgo</item>
+        <item>@string/libra</item>
+        <item>@string/scorpio</item>
+        <item>@string/sagittarius</item>
+        <item>@string/capricorn</item>
+        <item>@string/aquarius</item>
+        <item>@string/pisces</item>
+    </string-array>
+
+
+
+    <string name="aries_default">aries</string>
+    <string-array name="all_zodiacs_values">
+        <item>@string/aries_default</item>
+        <item>taurus</item>
+        <item>gemini</item>
+        <item>cancer</item>
+        <item>leo</item>
+        <item>virgo</item>
+        <item>libra</item>
+        <item>scorpio</item>
+        <item>sagittarius</item>
+        <item>capricorn</item>
+        <item>aquarius</item>
+        <item>pisces</item>
+    </string-array>
+
+    <!-- Horoscopes -->
+    <string name="com">Общий</string>
+    <string name="ero">Эротический</string>
+    <string name="anti">Антигороскоп</string>
+    <string name="bus">Бизнес</string>
+    <string name="hea">Здоровье</string>
+    <string name="cook">Кулинарный</string>
+    <string name="lov">Любовный</string>
+    <string name="mob">Мобильный</string>
+</resources>

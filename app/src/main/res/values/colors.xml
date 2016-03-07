@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="love_color">#316e73</color>
+    <color name="ero_color">#316e73</color>
+    <color name="com_color">#316e73</color>
+    <color name="mob_color">#316e73</color>
+    <color name="bus_color">#316e73</color>
+    <color name="hea_color">#316e73</color>
+    <color name="cook_color">#316e73</color>
+    <color name="anti_color">#316e73</color>
+
+
+    <color name="background_color">#3b424c</color>
+    <color name="white_text_color">#ffff</color>
+    <color name="black_text_color">#000</color>
+
+
+
+    <!-- HoroscopeActivity -->
+    <color name="title_horoscope_color">@color/white_text_color</color>
+
+    <!-- PagerStrip -->
+    <color name="pager_strip_background">#3cffffff</color>
+    <color name="pager_strip_text_color">@color/white_text_color</color>
+</resources>

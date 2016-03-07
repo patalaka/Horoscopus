@@ -1,0 +1,18 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="on_off_autoHoroscope"
+        android:summaryOff="@string/off_autoHoroscope"
+        android:summaryOn="@string/on_autoHoroscope"
+        android:title="@string/autoHoroscope">
+    </CheckBoxPreference>
+
+    <ListPreference
+        android:dependency="on_off_autoHoroscope"
+        android:key="listHoroscopes"
+        android:entryValues="@array/entryValues_horoscopes"
+        android:entries="@array/all_zodiacs"
+        android:title="@string/change_horoscope"
+        android:summary="@string/click_change_horoscope"/>
+
+
+</PreferenceScreen>
