@@ -13,18 +13,18 @@ public class ZodiacLab {
 
     private ZodiacLab(){
         allZodiacs = new ArrayList<>();
-        allZodiacs.add(new OneZodiacInfo("aries", R.string.aries, R.string.date_aries, R.string.status_aries, R.drawable.big_aries, R.drawable.ico_aries));
-        allZodiacs.add(new OneZodiacInfo("taurus", R.string.taurus, R.string.date_taurus, R.string.status_taurus, R.drawable.big_taurus, R.drawable.ico_taurus));
-        allZodiacs.add(new OneZodiacInfo("gemini", R.string.gemini, R.string.date_gemini, R.string.status_gemini, R.drawable.big_gemini, R.drawable.ico_gemini));
-        allZodiacs.add(new OneZodiacInfo("cancer", R.string.cancer, R.string.date_cancer, R.string.status_cancer, R.drawable.big_cancer, R.drawable.ico_cancer));
-        allZodiacs.add(new OneZodiacInfo("leo", R.string.leo, R.string.date_leo, R.string.status_leo, R.drawable.big_leo, R.drawable.ico_leo));
-        allZodiacs.add(new OneZodiacInfo("virgo", R.string.virgo, R.string.date_virgo, R.string.status_virgo, R.drawable.big_virgo, R.drawable.ico_virgo));
-        allZodiacs.add(new OneZodiacInfo("libra", R.string.libra, R.string.date_libra, R.string.status_libra, R.drawable.big_libra, R.drawable.ico_libra));
-        allZodiacs.add(new OneZodiacInfo("scorpio", R.string.scorpio, R.string.date_scorpio, R.string.status_scorpio, R.drawable.big_scorpio, R.drawable.ico_scorpio));
-        allZodiacs.add(new OneZodiacInfo("sagittarius", R.string.sagittarius, R.string.date_sagittarius, R.string.status_sagittarius, R.drawable.big_sagittarius, R.drawable.ico_sagittarius));
-        allZodiacs.add(new OneZodiacInfo("capricorn", R.string.capricorn, R.string.date_capricorn, R.string.status_capricorn, R.drawable.big_capricorn, R.drawable.ico_capricorn));
-        allZodiacs.add(new OneZodiacInfo("aquarius", R.string.aquarius, R.string.date_aquarius, R.string.status_aquarius, R.drawable.big_aquarius, R.drawable.ico_aquarius));
-        allZodiacs.add(new OneZodiacInfo("pisces", R.string.pisces, R.string.date_pisces, R.string.status_pisces, R.drawable.big_pisces, R.drawable.ico_pisces));
+        allZodiacs.add(new OneZodiacInfo("aries", R.string.aries, R.string.date_aries, R.string.status_aries, R.drawable.ic_aries_big, R.drawable.ic_aries));
+        allZodiacs.add(new OneZodiacInfo("taurus", R.string.taurus, R.string.date_taurus, R.string.status_taurus, R.drawable.ic_taurus_big, R.drawable.ic_taurus));
+        allZodiacs.add(new OneZodiacInfo("gemini", R.string.gemini, R.string.date_gemini, R.string.status_gemini, R.drawable.ic_gemini_big, R.drawable.ic_gemini));
+        allZodiacs.add(new OneZodiacInfo("cancer", R.string.cancer, R.string.date_cancer, R.string.status_cancer, R.drawable.ic_cancer_big, R.drawable.ic_cancer));
+        allZodiacs.add(new OneZodiacInfo("leo", R.string.leo, R.string.date_leo, R.string.status_leo, R.drawable.ic_leo_big, R.drawable.ic_leo));
+        allZodiacs.add(new OneZodiacInfo("virgo", R.string.virgo, R.string.date_virgo, R.string.status_virgo, R.drawable.ic_virgo_big, R.drawable.ic_virgo));
+        allZodiacs.add(new OneZodiacInfo("libra", R.string.libra, R.string.date_libra, R.string.status_libra, R.drawable.ic_libra_big, R.drawable.ic_libra));
+        allZodiacs.add(new OneZodiacInfo("scorpio", R.string.scorpio, R.string.date_scorpio, R.string.status_scorpio, R.drawable.ic_scorpio_big, R.drawable.ic_scorpio));
+        allZodiacs.add(new OneZodiacInfo("sagittarius", R.string.sagittarius, R.string.date_sagittarius, R.string.status_sagittarius, R.drawable.ic_sagittarius_big, R.drawable.ic_sagittarius));
+        allZodiacs.add(new OneZodiacInfo("capricorn", R.string.capricorn, R.string.date_capricorn, R.string.status_capricorn, R.drawable.ic_capricorn_big, R.drawable.ic_capricorn));
+        allZodiacs.add(new OneZodiacInfo("aquarius", R.string.aquarius, R.string.date_aquarius, R.string.status_aquarius, R.drawable.ic_aquarius_big, R.drawable.ic_aquarius));
+        allZodiacs.add(new OneZodiacInfo("pisces", R.string.pisces, R.string.date_pisces, R.string.status_pisces, R.drawable.ic_pisces_big, R.drawable.ic_pisces));
     }
 
     //get list zodiac info

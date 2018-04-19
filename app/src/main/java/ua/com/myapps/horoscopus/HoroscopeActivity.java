@@ -2,12 +2,19 @@ package ua.com.myapps.horoscopus;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.PorterDuff;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -32,14 +39,12 @@ import ua.com.myapps.horoscopus.fragments.ContentHoroscopeFragment;
 
 /**
  * This activity is showing info of horoscope
- * */
-
+ */
 
 public class HoroscopeActivity extends ActionBarActivity {
     private List<OneZodiacInfo> mAllZodiacsInfo;
     private List<OneHoroscopeInfo> mAllHoroscopesInfo;
     private int mZodiacIndex, mHoroIndex;
-
 
     private HoroscopePageAdapter pageAdapter;
 
@@ -62,7 +67,7 @@ public class HoroscopeActivity extends ActionBarActivity {
     }
 
 
-    private void showActionBar(int indexZodiac){
+    private void showActionBar(int indexZodiac) {
         LinearLayout actionBarLayout = (LinearLayout) getLayoutInflater().inflate(R.layout.actionbar_horoscope, null);
         //text actionBar
         TextView actionBarTextView = (TextView) actionBarLayout.findViewById(R.id.actionbar_titleView);
@@ -72,7 +77,9 @@ public class HoroscopeActivity extends ActionBarActivity {
         ActionBar.LayoutParams actionBarLayoutParams = new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.LEFT);
         ImageView drawerImageView = (ImageView) actionBarLayout.findViewById(R.id.drawer_image);
         //control version
-        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB){drawerImageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);}
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB) {
+            drawerImageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        }
         drawerImageView.setImageDrawable(getResources().getDrawable(mAllZodiacsInfo.get(indexZodiac).getSmallImageZodiac()));
 
 
@@ -87,11 +94,18 @@ public class HoroscopeActivity extends ActionBarActivity {
         }
     }
 
+    private Drawable convertImageToRepeatDrawable(int resId){
+        Bitmap bmp = BitmapFactory.decodeResource(getResources(), resId);
+        BitmapDrawable bitmapDrawable = new BitmapDrawable(bmp);
+        bitmapDrawable.setTileModeXY(Shader.TileMode.REPEAT, Shader.TileMode.REPEAT);
+        return bitmapDrawable;
+    }
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    private void showContent(int indexHoroscope){
-        //FrameLayout frameLayoutTop = (FrameLayout)findViewById(R.id.frame_layout_horoscope_title);
+    private void showContent(int indexHoroscope) {
+        OneHoroscopeInfo horoscopeInfo = mAllHoroscopesInfo.get(indexHoroscope);
         LinearLayout bacLayout = (LinearLayout) findViewById(R.id.horoscope_activity_ln);
-        bacLayout.setBackgroundResource(mAllHoroscopesInfo.get(indexHoroscope).getHoroscopeBackground());
+        bacLayout.setBackgroundDrawable(convertImageToRepeatDrawable(horoscopeInfo.getHoroscopeBackground()));
         //Title
         TextView titleHoroscope = (TextView) findViewById(R.id.horoscope_title);
         titleHoroscope.setText(mAllHoroscopesInfo.get(indexHoroscope).getHoroscopeName());
@@ -101,8 +115,7 @@ public class HoroscopeActivity extends ActionBarActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(pageAdapter);
         viewPager.setCurrentItem(1);
-        }
-
+    }
 
     //MENU
     @Override
@@ -131,7 +144,7 @@ public class HoroscopeActivity extends ActionBarActivity {
     //back Button
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(KeyEvent.KEYCODE_BACK == keyCode){
+        if (KeyEvent.KEYCODE_BACK == keyCode) {
             setResult(RESULT_CANCELED);
             finish();
             return true;
@@ -140,29 +153,28 @@ public class HoroscopeActivity extends ActionBarActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-
-
     /**
      * FragmentAdapter
-     * */
+     */
     public class HoroscopePageAdapter extends FragmentPagerAdapter {
         private int antiHoroscope = 6, cookHoroscope = 5, mobHoroscope = 7;
 
-        public HoroscopePageAdapter(FragmentManager fm){
+        public HoroscopePageAdapter(FragmentManager fm) {
             super(fm);
         }
+
         @Override
         public Fragment getItem(int position) {
-            return ContentHoroscopeFragment.newInstance(position,mAllZodiacsInfo.get(mZodiacIndex).getLinkZodiac(), mAllHoroscopesInfo.get(mHoroIndex).getHoroscopeLink());
+            return ContentHoroscopeFragment.newInstance(position, mAllZodiacsInfo.get(mZodiacIndex).getLinkZodiac(), mAllHoroscopesInfo.get(mHoroIndex).getHoroscopeLink());
         }
 
         @Override
         public int getCount() {
-            if(   mHoroIndex == antiHoroscope
-               || mHoroIndex == cookHoroscope
-               || mHoroIndex == mobHoroscope ){
+            if (mHoroIndex == antiHoroscope
+                    || mHoroIndex == cookHoroscope
+                    || mHoroIndex == mobHoroscope) {
                 return 3;
-            }else {
+            } else {
                 return 5;
             }
         }
@@ -170,7 +182,7 @@ public class HoroscopeActivity extends ActionBarActivity {
         @Override
         public CharSequence getPageTitle(int position) {
             int dayName = 0;
-            switch (position){
+            switch (position) {
                 case 0:
                     dayName = R.string.yesterday;
                     break;

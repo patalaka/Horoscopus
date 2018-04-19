@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import ua.com.myapps.horoscopus.R;
+
 /**
 *Created cards for GridView
 */
@@ -54,7 +56,7 @@ public class CardAdapter extends BaseAdapter{
         TextView tv;
 
         linearLayout = new LinearLayout(mContext);
-        linearLayout.setBackgroundColor(mContext.getResources().getColor(mAllCardsInfo.get(position).getHoroscopeColor()));
+        linearLayout.setBackgroundColor(mContext.getResources().getColor(R.color.card_view_color));
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
         linearLayout.setGravity(Gravity.CENTER);
 

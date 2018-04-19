@@ -1,39 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/horoscope_activity_ln"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:background="@drawable/bg_anti"
     tools:context=".HoroscopeActivity">
 
-
-    <FrameLayout
-        android:id="@+id/frame_layout_horoscope_title"
+    <TextView
+        android:id="@+id/horoscope_title"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:orientation="vertical">
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/title_horoscope_color"
+        android:textSize="25sp"
+        tools:text="Test" />
 
-        <TextView
-            android:id="@+id/horoscope_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="25sp"
-            android:textColor="@color/title_horoscope_color"/>
-    </FrameLayout>
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp">
+
         <android.support.v4.view.PagerTabStrip
             android:id="@+id/pagerTitleStrip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/pager_strip_text_color"
-            android:background="@color/pager_strip_background">
-        </android.support.v4.view.PagerTabStrip>
+            android:background="@color/pager_strip_background"
+            android:textColor="@color/pager_strip_text_color"/>
     </android.support.v4.view.ViewPager>
 
 </LinearLayout>
