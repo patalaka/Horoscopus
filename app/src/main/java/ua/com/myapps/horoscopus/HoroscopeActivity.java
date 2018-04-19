@@ -2,8 +2,6 @@ package ua.com.myapps.horoscopus;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -22,10 +20,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-
-import com.larvalabs.svgandroid.SVG;
-import com.larvalabs.svgandroid.SVGParser;
 
 import java.util.List;
 
@@ -79,8 +73,7 @@ public class HoroscopeActivity extends ActionBarActivity {
         ImageView drawerImageView = (ImageView) actionBarLayout.findViewById(R.id.drawer_image);
         //control version
         if(Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB){drawerImageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);}
-        SVG svg = SVGParser.getSVGFromResource(getResources(), mAllZodiacsInfo.get(indexZodiac).getSmallImageZodiac());
-        drawerImageView.setImageDrawable(svg.createPictureDrawable());
+        drawerImageView.setImageDrawable(getResources().getDrawable(mAllZodiacsInfo.get(indexZodiac).getSmallImageZodiac()));
 
 
         ActionBar actionBar = getSupportActionBar();

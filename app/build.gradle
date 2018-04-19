@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 25
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "ua.com.myapps.horoscopus"
         minSdkVersion 9
-        targetSdkVersion 23
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
     }
@@ -20,8 +20,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.+'
-    compile files('libs/svg-android.jar')
-    compile files('src/libs/svg-android.jar')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:25.4.0'
 }

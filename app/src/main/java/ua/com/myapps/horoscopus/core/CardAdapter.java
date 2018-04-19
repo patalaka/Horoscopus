@@ -7,13 +7,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.larvalabs.svgandroid.SVG;
-import com.larvalabs.svgandroid.SVGParser;
 
 import java.util.List;
 
@@ -62,11 +58,9 @@ public class CardAdapter extends BaseAdapter{
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
         linearLayout.setGravity(Gravity.CENTER);
 
-        SVG imageSVG = SVGParser.getSVGFromResource(mContext.getResources(), mAllCardsInfo.get(position).getHoroscopeIcon());
-
         imageView = new ImageView(mContext);
         if(Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB){ imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); }
-        imageView.setImageDrawable(imageSVG.createPictureDrawable());
+        imageView.setImageDrawable(mContext.getResources().getDrawable(mAllCardsInfo.get(position).getHoroscopeIcon()));
         imageView.setPadding(0,0,0,0);
 
 

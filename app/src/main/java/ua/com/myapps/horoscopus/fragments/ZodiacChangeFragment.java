@@ -14,9 +14,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.larvalabs.svgandroid.SVG;
-import com.larvalabs.svgandroid.SVGParser;
-
 import java.util.List;
 
 import ua.com.myapps.horoscopus.AllZodiacsActivity;
@@ -25,9 +22,9 @@ import ua.com.myapps.horoscopus.core.ZodiacLab;
 import ua.com.myapps.horoscopus.core.ZodiacLab.OneZodiacInfo;
 
 /**
-* ZodiacChangeFragment
-*/
-public class ZodiacChangeFragment extends Fragment{
+ * ZodiacChangeFragment
+ */
+public class ZodiacChangeFragment extends Fragment {
     private int mPositionZodiac;
     private ImageView mImageZodiac;
     private TextView mTitleZodiac, mDateZodiac, mStatusTextZodiac;
@@ -52,7 +49,7 @@ public class ZodiacChangeFragment extends Fragment{
 
         mImageZodiac = (ImageView) view.findViewById(R.id.image_zodiac);
         mTitleZodiac = (TextView) view.findViewById(R.id.title_zodiac);
-        mDateZodiac  = (TextView) view.findViewById(R.id.date_zodiac);
+        mDateZodiac = (TextView) view.findViewById(R.id.date_zodiac);
         mStatusTextZodiac = (TextView) view.findViewById(R.id.text_status_zodiac);
 
         //set text info
@@ -63,7 +60,7 @@ public class ZodiacChangeFragment extends Fragment{
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AllZodiacsActivity.class);
                 startActivityForResult(intent, 1);
-                getActivity().overridePendingTransition(R.anim.abc_grow_fade_in_from_bottom,R.anim.abc_shrink_fade_out_from_bottom);
+                getActivity().overridePendingTransition(R.anim.abc_grow_fade_in_from_bottom, R.anim.abc_shrink_fade_out_from_bottom);
             }
         });
         return view;
@@ -74,12 +71,12 @@ public class ZodiacChangeFragment extends Fragment{
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        for(OneZodiacInfo h : allZodiacs){
-            if(h.getLinkZodiac().equals(data.getStringExtra("zodiac_result"))){
+        for (OneZodiacInfo h : allZodiacs) {
+            if (h.getLinkZodiac().equals(data.getStringExtra("zodiac_result"))) {
                 setInformationZodiac(h);
 
                 //Auto load horoscope
-                if(!mSp.getBoolean("on_off_autoHoroscope", false)){
+                if (!mSp.getBoolean("on_off_autoHoroscope", false)) {
                     SharedPreferences.Editor editor = mSp.edit();
                     editor.putString("listHoroscopes", String.valueOf(mPositionZodiac));
                     editor.apply();
@@ -91,10 +88,11 @@ public class ZodiacChangeFragment extends Fragment{
 
 
     //set info in UI and putExtra(ZODIAC)
-    private void setInformationZodiac(OneZodiacInfo zodiac){
-        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB){mImageZodiac.setLayerType(View.LAYER_TYPE_SOFTWARE, null);}
-        SVG svgBigImage = SVGParser.getSVGFromResource(getResources(), zodiac.getBigImageZodiac());
-        mImageZodiac.setImageDrawable(svgBigImage.createPictureDrawable());
+    private void setInformationZodiac(OneZodiacInfo zodiac) {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB)
+            mImageZodiac.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+
+        mImageZodiac.setImageDrawable(getResources().getDrawable(zodiac.getBigImageZodiac()));
 
 
         mTitleZodiac.setText(zodiac.getTitleZodiac());

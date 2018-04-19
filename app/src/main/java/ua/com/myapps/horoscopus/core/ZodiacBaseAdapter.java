@@ -10,12 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.larvalabs.svgandroid.SVG;
-import com.larvalabs.svgandroid.SVGParser;
-
 import java.util.List;
-
-import ua.com.myapps.horoscopus.R;
 
 /**
  * Created by Max on 27.09.2015.
@@ -27,7 +22,7 @@ public class ZodiacBaseAdapter extends BaseAdapter {
     private float scale;
     private int padding_50dp;
 
-    public ZodiacBaseAdapter(Context context, List<ZodiacLab.OneZodiacInfo> list){
+    public ZodiacBaseAdapter(Context context, List<ZodiacLab.OneZodiacInfo> list) {
         this.mContext = context;
         this.mZodiacList = list;
 
@@ -57,9 +52,10 @@ public class ZodiacBaseAdapter extends BaseAdapter {
         linLayout.setGravity(Gravity.CENTER);
 
         ImageView imageView = new ImageView(mContext);
-        SVG zodiacSVG = SVGParser.getSVGFromResource(mContext.getResources(), mZodiacList.get(position).getSmallImageZodiac());
-        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB){imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); }
-        imageView.setImageDrawable(zodiacSVG.createPictureDrawable());
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB)
+            imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+
+        imageView.setImageDrawable(mContext.getResources().getDrawable(mZodiacList.get(position).getSmallImageZodiac()));
 
 
         TextView textView = new TextView(mContext);
