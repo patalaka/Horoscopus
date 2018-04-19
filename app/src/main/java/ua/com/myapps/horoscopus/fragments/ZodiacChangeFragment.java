@@ -18,8 +18,8 @@ import java.util.List;
 
 import ua.com.myapps.horoscopus.AllZodiacsActivity;
 import ua.com.myapps.horoscopus.R;
-import ua.com.myapps.horoscopus.core.ZodiacLab;
-import ua.com.myapps.horoscopus.core.ZodiacLab.OneZodiacInfo;
+import ua.com.myapps.horoscopus.core.Mapper;
+import ua.com.myapps.horoscopus.item.ZodiacItem;
 
 /**
  * ZodiacChangeFragment
@@ -29,13 +29,13 @@ public class ZodiacChangeFragment extends Fragment {
     private ImageView mImageZodiac;
     private TextView mTitleZodiac, mDateZodiac, mStatusTextZodiac;
     private SharedPreferences mSp;
-    private List<OneZodiacInfo> allZodiacs;
+    private List<ZodiacItem> allZodiacs;
     private Intent mIntent;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        allZodiacs = ZodiacLab.getZodiacList();
+        allZodiacs = Mapper.getZodiacList();
         mSp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         mPositionZodiac = Integer.valueOf(mSp.getString("listHoroscopes", "0"));
 
@@ -71,8 +71,8 @@ public class ZodiacChangeFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        for (OneZodiacInfo h : allZodiacs) {
-            if (h.getLinkZodiac().equals(data.getStringExtra("zodiac_result"))) {
+        for (ZodiacItem h : allZodiacs) {
+            if (h.getTag().equals(data.getStringExtra("zodiac_result"))) {
                 setInformationZodiac(h);
 
                 //Auto load horoscope
@@ -88,16 +88,16 @@ public class ZodiacChangeFragment extends Fragment {
 
 
     //set info in UI and putExtra(ZODIAC)
-    private void setInformationZodiac(OneZodiacInfo zodiac) {
+    private void setInformationZodiac(ZodiacItem zodiac) {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB)
             mImageZodiac.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
-        mImageZodiac.setImageDrawable(getResources().getDrawable(zodiac.getBigImageZodiac()));
+        mImageZodiac.setImageDrawable(getResources().getDrawable(zodiac.getIconBigRes()));
 
 
-        mTitleZodiac.setText(zodiac.getTitleZodiac());
-        mDateZodiac.setText(zodiac.getDateZodiac());
-        mStatusTextZodiac.setText(zodiac.getStatusTextZodiac());
+        mTitleZodiac.setText(zodiac.getTitleRes());
+        mDateZodiac.setText(zodiac.getDateRes());
+        mStatusTextZodiac.setText(zodiac.getStatusRes());
 
         //getPosition zodiac in listZodiacs
         mPositionZodiac = allZodiacs.indexOf(zodiac);

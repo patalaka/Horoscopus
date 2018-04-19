@@ -59,13 +59,13 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-    public void showAboutDialog(){
+    public void showAboutDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.about_title);
-        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB){
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
             builder.setMessage(R.string.version_app_old);
-        }else {
+        } else {
             View view = (LinearLayout) getLayoutInflater().inflate(R.layout.about, null);
             builder.setView(view);
         }

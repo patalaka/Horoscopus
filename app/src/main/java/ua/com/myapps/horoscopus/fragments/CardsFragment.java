@@ -15,19 +15,20 @@ import java.util.List;
 
 import ua.com.myapps.horoscopus.HoroscopeActivity;
 import ua.com.myapps.horoscopus.core.CardAdapter;
-import ua.com.myapps.horoscopus.core.HoroscopeLab;
+import ua.com.myapps.horoscopus.core.Mapper;
+import ua.com.myapps.horoscopus.item.HoroscopeItem;
 
 
 public class CardsFragment extends Fragment {
     public static final String ZODIAC_ID = "zodiac_id";
     public static final String HOROSCOPE_ID = "horoscope_id";
-    private List<HoroscopeLab.OneHoroscopeInfo> mAllCardsInfo;
+    private List<HoroscopeItem> horoscopeItemList;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         //data for cards
-        mAllCardsInfo = HoroscopeLab.getAllHoroscopesInfo();
+        horoscopeItemList = Mapper.getHoroscopeItemList();
     }
 
     @Nullable
@@ -43,10 +44,10 @@ public class CardsFragment extends Fragment {
         gridView.setVerticalSpacing(3);
         gridView.setHorizontalSpacing(3);
         gridView.setDrawSelectorOnTop(true);
-       // gridView.setSelector(getResources().getDrawable(R.drawable.item_selected));
+        // gridView.setSelector(getResources().getDrawable(R.drawable.item_selected));
 
         //Adapter
-        gridView.setAdapter(new CardAdapter(getActivity(), mAllCardsInfo));
+        gridView.setAdapter(new CardAdapter(getActivity(), horoscopeItemList));
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

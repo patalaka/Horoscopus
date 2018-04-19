@@ -12,19 +12,21 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import ua.com.myapps.horoscopus.item.ZodiacItem;
+
 /**
  * Created by Max on 27.09.2015.
  */
 public class ZodiacBaseAdapter extends BaseAdapter {
     private Context mContext;
-    private List<ZodiacLab.OneZodiacInfo> mZodiacList;
+    private List<ZodiacItem> zodiacItemList;
 
     private float scale;
     private int padding_50dp;
 
-    public ZodiacBaseAdapter(Context context, List<ZodiacLab.OneZodiacInfo> list) {
+    public ZodiacBaseAdapter(Context context, List<ZodiacItem> list) {
         this.mContext = context;
-        this.mZodiacList = list;
+        this.zodiacItemList = list;
 
         scale = mContext.getResources().getDisplayMetrics().density;
         padding_50dp = (int) (50 * scale + 0.5f);
@@ -32,7 +34,7 @@ public class ZodiacBaseAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return mZodiacList.size();
+        return zodiacItemList.size();
     }
 
     @Override
@@ -55,11 +57,10 @@ public class ZodiacBaseAdapter extends BaseAdapter {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB)
             imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
-        imageView.setImageDrawable(mContext.getResources().getDrawable(mZodiacList.get(position).getSmallImageZodiac()));
-
+        imageView.setImageDrawable(mContext.getResources().getDrawable(zodiacItemList.get(position).getIconRes()));
 
         TextView textView = new TextView(mContext);
-        textView.setText(mZodiacList.get(position).getTitleZodiac());
+        textView.setText(zodiacItemList.get(position).getTitleRes());
         textView.setGravity(Gravity.CENTER);
 
         linLayout.addView(imageView, new ViewGroup.LayoutParams(padding_50dp, padding_50dp));

@@ -4,7 +4,6 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.PorterDuff;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -14,7 +13,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -30,20 +28,19 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import ua.com.myapps.horoscopus.core.HoroscopeLab;
-import ua.com.myapps.horoscopus.core.HoroscopeLab.OneHoroscopeInfo;
-import ua.com.myapps.horoscopus.core.ZodiacLab;
-import ua.com.myapps.horoscopus.core.ZodiacLab.OneZodiacInfo;
+import ua.com.myapps.horoscopus.core.Mapper;
 import ua.com.myapps.horoscopus.fragments.CardsFragment;
 import ua.com.myapps.horoscopus.fragments.ContentHoroscopeFragment;
+import ua.com.myapps.horoscopus.item.HoroscopeItem;
+import ua.com.myapps.horoscopus.item.ZodiacItem;
 
 /**
  * This activity is showing info of horoscope
  */
 
 public class HoroscopeActivity extends ActionBarActivity {
-    private List<OneZodiacInfo> mAllZodiacsInfo;
-    private List<OneHoroscopeInfo> mAllHoroscopesInfo;
+    private List<ZodiacItem> zodiacItemList;
+    private List<HoroscopeItem> horoscopeItemList;
     private int mZodiacIndex, mHoroIndex;
 
     private HoroscopePageAdapter pageAdapter;
@@ -54,9 +51,9 @@ public class HoroscopeActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horoscope);
         //get zodiac info
-        mAllZodiacsInfo = ZodiacLab.getZodiacList();
+        zodiacItemList = Mapper.getZodiacList();
         //get horo info
-        mAllHoroscopesInfo = HoroscopeLab.getAllHoroscopesInfo();
+        horoscopeItemList = Mapper.getHoroscopeItemList();
 
         Intent intent = getIntent();
         mZodiacIndex = intent.getIntExtra(CardsFragment.ZODIAC_ID, 0);
@@ -71,7 +68,7 @@ public class HoroscopeActivity extends ActionBarActivity {
         LinearLayout actionBarLayout = (LinearLayout) getLayoutInflater().inflate(R.layout.actionbar_horoscope, null);
         //text actionBar
         TextView actionBarTextView = (TextView) actionBarLayout.findViewById(R.id.actionbar_titleView);
-        actionBarTextView.setText(mAllZodiacsInfo.get(indexZodiac).getTitleZodiac());
+        actionBarTextView.setText(zodiacItemList.get(indexZodiac).getTitleRes());
 
         //image actionBar
         ActionBar.LayoutParams actionBarLayoutParams = new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.LEFT);
@@ -80,7 +77,7 @@ public class HoroscopeActivity extends ActionBarActivity {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB) {
             drawerImageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         }
-        drawerImageView.setImageDrawable(getResources().getDrawable(mAllZodiacsInfo.get(indexZodiac).getSmallImageZodiac()));
+        drawerImageView.setImageDrawable(getResources().getDrawable(zodiacItemList.get(indexZodiac).getIconRes()));
 
 
         ActionBar actionBar = getSupportActionBar();
@@ -94,7 +91,7 @@ public class HoroscopeActivity extends ActionBarActivity {
         }
     }
 
-    private Drawable convertImageToRepeatDrawable(int resId){
+    private Drawable convertImageToRepeatDrawable(int resId) {
         Bitmap bmp = BitmapFactory.decodeResource(getResources(), resId);
         BitmapDrawable bitmapDrawable = new BitmapDrawable(bmp);
         bitmapDrawable.setTileModeXY(Shader.TileMode.REPEAT, Shader.TileMode.REPEAT);
@@ -103,12 +100,12 @@ public class HoroscopeActivity extends ActionBarActivity {
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void showContent(int indexHoroscope) {
-        OneHoroscopeInfo horoscopeInfo = mAllHoroscopesInfo.get(indexHoroscope);
+        HoroscopeItem item = horoscopeItemList.get(indexHoroscope);
         LinearLayout bacLayout = (LinearLayout) findViewById(R.id.horoscope_activity_ln);
-        bacLayout.setBackgroundDrawable(convertImageToRepeatDrawable(horoscopeInfo.getHoroscopeBackground()));
+        bacLayout.setBackgroundDrawable(convertImageToRepeatDrawable(item.getResBackground()));
         //Title
         TextView titleHoroscope = (TextView) findViewById(R.id.horoscope_title);
-        titleHoroscope.setText(mAllHoroscopesInfo.get(indexHoroscope).getHoroscopeName());
+        titleHoroscope.setText(horoscopeItemList.get(indexHoroscope).getResName());
 
         //ViewPager
         pageAdapter = new HoroscopePageAdapter(getSupportFragmentManager());
@@ -165,7 +162,7 @@ public class HoroscopeActivity extends ActionBarActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return ContentHoroscopeFragment.newInstance(position, mAllZodiacsInfo.get(mZodiacIndex).getLinkZodiac(), mAllHoroscopesInfo.get(mHoroIndex).getHoroscopeLink());
+            return ContentHoroscopeFragment.newInstance(position, zodiacItemList.get(mZodiacIndex).getTag(), horoscopeItemList.get(mHoroIndex).getTag());
         }
 
         @Override

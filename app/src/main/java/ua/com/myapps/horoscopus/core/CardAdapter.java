@@ -14,29 +14,31 @@ import android.widget.TextView;
 import java.util.List;
 
 import ua.com.myapps.horoscopus.R;
+import ua.com.myapps.horoscopus.item.HoroscopeItem;
 
 /**
-*Created cards for GridView
-*/
-public class CardAdapter extends BaseAdapter{
+ * Created cards for GridView
+ */
+public class CardAdapter extends BaseAdapter {
     private Context mContext;
-    private List<HoroscopeLab.OneHoroscopeInfo> mAllCardsInfo;
+    private List<HoroscopeItem> horoscopeItemList;
 
     private float scale;
     private int padding_25dp;
     private int padding_10dp;
 
-    public CardAdapter(Context context, List<HoroscopeLab.OneHoroscopeInfo> mAllCardsInfo){
+    public CardAdapter(Context context, List<HoroscopeItem> horoscopeItemList) {
         this.mContext = context;
-        this.mAllCardsInfo = mAllCardsInfo;
+        this.horoscopeItemList = horoscopeItemList;
 
         scale = mContext.getResources().getDisplayMetrics().density;
         padding_25dp = (int) (25 * scale + 0.5f);
         padding_10dp = (int) (10 * scale + 0.5f);
     }
+
     @Override
     public int getCount() {
-        return mAllCardsInfo.size();
+        return horoscopeItemList.size();
     }
 
     @Override
@@ -61,23 +63,28 @@ public class CardAdapter extends BaseAdapter{
         linearLayout.setGravity(Gravity.CENTER);
 
         imageView = new ImageView(mContext);
-        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB){ imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null); }
-        imageView.setImageDrawable(mContext.getResources().getDrawable(mAllCardsInfo.get(position).getHoroscopeIcon()));
-        imageView.setPadding(0,0,0,0);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB) {
+            imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        }
+        imageView.setImageDrawable(mContext.getResources().getDrawable(horoscopeItemList.get(position).getResIcon()));
+        imageView.setPadding(0, 0, 0, 0);
 
 
         tv = new TextView(mContext);
         tv.setGravity(Gravity.CENTER);
         tv.setTextColor(Color.WHITE);
-        tv.setPadding(padding_10dp,0,0,0);
+        tv.setPadding(padding_10dp, 0, 0, 0);
         tv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        tv.setText(mAllCardsInfo.get(position).mHoroscopeName);
+        tv.setText(horoscopeItemList.get(position).getResName());
 
 
         //TextView LayoutParams options
         ViewGroup.LayoutParams lp = tv.getLayoutParams();
-        if(mContext.getResources().getConfiguration().orientation == 2){lp.height = parent.getWidth()/4;}
-        else {lp.height = parent.getWidth()/3;}
+        if (mContext.getResources().getConfiguration().orientation == 2) {
+            lp.height = parent.getWidth() / 4;
+        } else {
+            lp.height = parent.getWidth() / 3;
+        }
 
 
         linearLayout.addView(imageView, new ViewGroup.LayoutParams(padding_25dp, padding_25dp));

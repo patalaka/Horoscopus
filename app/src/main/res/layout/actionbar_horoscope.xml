@@ -8,9 +8,8 @@
 
     <ImageView
         android:layout_width="60dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="left|center"
-        android:gravity="left"
+        android:layout_height="60dp"
+        android:layout_gravity="start|center"
         android:id="@+id/drawer_image"
         android:src="@mipmap/ic_launcher"
         android:paddingTop="7dp"
