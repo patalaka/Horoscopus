@@ -1,4 +1,4 @@
-package ua.com.myapps.horoscopus.core;
+package ua.com.myapps.horoscopus.old.core;
 
 import android.content.Context;
 import android.os.Build;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import ua.com.myapps.horoscopus.item.ZodiacItem;
+import ua.com.myapps.horoscopus.old.item.ZodiacItem;
 
 /**
  * Created by Max on 27.09.2015.

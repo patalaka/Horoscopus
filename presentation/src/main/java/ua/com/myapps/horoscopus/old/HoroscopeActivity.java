@@ -1,4 +1,4 @@
-package ua.com.myapps.horoscopus;
+package ua.com.myapps.horoscopus.old;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -28,17 +28,18 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import ua.com.myapps.horoscopus.core.Mapper;
-import ua.com.myapps.horoscopus.fragments.CardsFragment;
-import ua.com.myapps.horoscopus.fragments.ContentHoroscopeFragment;
-import ua.com.myapps.horoscopus.item.HoroscopeItem;
-import ua.com.myapps.horoscopus.item.ZodiacItem;
+import ua.com.myapps.horoscopus.R;
+import ua.com.myapps.horoscopus.old.core.Mapper;
+import ua.com.myapps.horoscopus.old.fragments.CardsFragment;
+import ua.com.myapps.horoscopus.old.fragments.ContentHoroscopeFragment;
+import ua.com.myapps.horoscopus.old.item.HoroscopeItem;
+import ua.com.myapps.horoscopus.old.item.ZodiacItem;
 
 /**
  * This activity is showing info of horoscope
  */
 
-public class HoroscopeActivity extends ActionBarActivity {
+public class HoroscopeActivity extends AppCompatActivity {
     private List<ZodiacItem> zodiacItemList;
     private List<HoroscopeItem> horoscopeItemList;
     private int mZodiacIndex, mHoroIndex;

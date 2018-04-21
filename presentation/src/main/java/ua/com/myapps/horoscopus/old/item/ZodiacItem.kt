@@ -1,4 +1,4 @@
-package ua.com.myapps.horoscopus.item
+package ua.com.myapps.horoscopus.old.item
 
 class ZodiacItem(
         val titleRes: Int,

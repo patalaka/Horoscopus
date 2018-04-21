@@ -1,10 +1,12 @@
-package ua.com.myapps.horoscopus;
+package ua.com.myapps.horoscopus.old;
 
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+
+import ua.com.myapps.horoscopus.R;
 
 /**
  * Options

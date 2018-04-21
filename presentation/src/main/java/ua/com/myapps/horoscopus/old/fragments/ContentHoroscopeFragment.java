@@ -1,4 +1,4 @@
-package ua.com.myapps.horoscopus.fragments;
+package ua.com.myapps.horoscopus.old.fragments;
 
 
 import android.database.Cursor;
@@ -30,7 +30,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import ua.com.myapps.horoscopus.R;
-import ua.com.myapps.horoscopus.databases.ContentDB;
+import ua.com.myapps.horoscopus.old.databases.ContentDB;
 
 
 /**

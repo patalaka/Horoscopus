@@ -1,4 +1,4 @@
-package ua.com.myapps.horoscopus.databases;
+package ua.com.myapps.horoscopus.old.databases;
 
 import android.content.ContentValues;
 import android.content.Context;

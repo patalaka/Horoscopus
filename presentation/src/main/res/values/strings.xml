@@ -5,6 +5,7 @@
     <string name="download">Загрузка</string>
 
     <!-- Menus -->
+    <string name="horoscopes">Гороскопы</string>
     <string name="settings">Настройки</string>
     <string name="refresh">Обновить</string>
 

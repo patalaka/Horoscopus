@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:background="@drawable/bg_anti"
-    tools:context=".HoroscopeActivity">
+    tools:context=".old.HoroscopeActivity">
 
     <TextView
         android:id="@+id/horoscope_title"

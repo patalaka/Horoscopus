@@ -1,11 +1,11 @@
-package ua.com.myapps.horoscopus.core;
+package ua.com.myapps.horoscopus.old.core;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import ua.com.myapps.horoscopus.R;
-import ua.com.myapps.horoscopus.item.HoroscopeItem;
-import ua.com.myapps.horoscopus.item.ZodiacItem;
+import ua.com.myapps.horoscopus.old.item.HoroscopeItem;
+import ua.com.myapps.horoscopus.old.item.ZodiacItem;
 
 /**
  * Creating horoscope information

@@ -1,9 +1,9 @@
-package ua.com.myapps.horoscopus;
+package ua.com.myapps.horoscopus.old;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,14 +11,15 @@ import android.widget.GridView;
 
 import java.util.List;
 
-import ua.com.myapps.horoscopus.core.Mapper;
-import ua.com.myapps.horoscopus.core.ZodiacBaseAdapter;
-import ua.com.myapps.horoscopus.item.ZodiacItem;
+import ua.com.myapps.horoscopus.R;
+import ua.com.myapps.horoscopus.old.core.Mapper;
+import ua.com.myapps.horoscopus.old.core.ZodiacBaseAdapter;
+import ua.com.myapps.horoscopus.old.item.ZodiacItem;
 
 /**
  * Showing Zodiac list
  */
-public class AllZodiacsActivity extends ActionBarActivity {
+public class AllZodiacsActivity extends AppCompatActivity {
     private Intent mIntent;
 
     @Override

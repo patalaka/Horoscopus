@@ -1,4 +1,4 @@
-package ua.com.myapps.horoscopus.core;
+package ua.com.myapps.horoscopus.old.core;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import ua.com.myapps.horoscopus.R;
-import ua.com.myapps.horoscopus.item.HoroscopeItem;
+import ua.com.myapps.horoscopus.old.item.HoroscopeItem;
 
 /**
  * Created cards for GridView

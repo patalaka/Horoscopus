@@ -1,4 +1,4 @@
-package ua.com.myapps.horoscopus.fragments;
+package ua.com.myapps.horoscopus.old.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,10 +13,10 @@ import android.widget.GridView;
 
 import java.util.List;
 
-import ua.com.myapps.horoscopus.HoroscopeActivity;
-import ua.com.myapps.horoscopus.core.CardAdapter;
-import ua.com.myapps.horoscopus.core.Mapper;
-import ua.com.myapps.horoscopus.item.HoroscopeItem;
+import ua.com.myapps.horoscopus.old.HoroscopeActivity;
+import ua.com.myapps.horoscopus.old.core.CardAdapter;
+import ua.com.myapps.horoscopus.old.core.Mapper;
+import ua.com.myapps.horoscopus.old.item.HoroscopeItem;
 
 
 public class CardsFragment extends Fragment {
