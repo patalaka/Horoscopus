@@ -1,30 +1,9 @@
 <resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/bg_splash</item>
-    </style>
-
-
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="actionBarStyle">@style/MyActionBar</item>
-    </style>
-
-    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@color/background_color</item>
-        <item name="background">@color/background_color</item>
-    </style>
-
-    <style name="ItemZodiacChange">
-        <item name="android:orientation">vertical</item>
-        <item name="android:gravity">center</item>
-        <item name="android:paddingTop">5dp</item>
-        <item name="android:paddingBottom">5dp</item>
-        <item name="android:paddingRight">2dp</item>
-        <item name="android:paddingLeft">2dp</item>
-        <item name="android:onClick">onClick</item>
-    </style>
-
-    <style name="ItemTextZodiac">
-        <item name="android:textColor">@color/abc_primary_text_disable_only_material_light</item>
-        <item name="android:layout_marginTop">2dp</item>
     </style>
 </resources>

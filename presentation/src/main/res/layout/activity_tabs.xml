@@ -4,8 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ua.com.myapps.horoscopus.view.custom.view.LockableViewPager
+        android:id="@+id/viewPagerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomMenuView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <android.support.design.widget.BottomNavigationView
-        android:layout_width="match_parent"
+        android:id="@+id/bottomMenuView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
@@ -13,5 +23,8 @@
         app:itemIconTint="@drawable/bg_selector_bottom_menu"
         app:itemTextColor="@drawable/bg_selector_bottom_menu"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewPagerView"
         app:menu="@menu/bottom_menu" />
 </android.support.constraint.ConstraintLayout>

@@ -5,7 +5,11 @@
         android:icon="@drawable/ic_home"
         android:title="@string/horoscopes" />
     <item
-        android:enabled="false"
+        android:id="@+id/compatibility"
+        android:icon="@drawable/ic_library_books"
+        android:title="@string/compatibility" />
+
+    <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_settings"
         android:title="@string/settings" />
