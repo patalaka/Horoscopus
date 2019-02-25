@@ -50,7 +50,7 @@ public class ZodiacChangeFragment extends Fragment {
         mImageZodiac = (ImageView) view.findViewById(R.id.image_zodiac);
         mTitleZodiac = (TextView) view.findViewById(R.id.title_zodiac);
         mDateZodiac = (TextView) view.findViewById(R.id.date_zodiac);
-        mStatusTextZodiac = (TextView) view.findViewById(R.id.text_status_zodiac);
+        mStatusTextZodiac = (TextView) view.findViewById(R.id.sloganView);
 
         //set text info
         setInformationZodiac(allZodiacs.get(mPositionZodiac));

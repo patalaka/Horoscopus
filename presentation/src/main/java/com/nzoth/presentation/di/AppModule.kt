@@ -8,6 +8,6 @@ import org.koin.dsl.module
 
 val appModule: Module = module {
     factory<HoroscopeListContract.Presenter> { (fragment: HoroscopeListFragment) ->
-        HoroscopeListPresenter(fragment, get())
+        HoroscopeListPresenter(fragment, get(), get())
     }
 }

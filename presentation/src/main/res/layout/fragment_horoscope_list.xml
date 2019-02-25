@@ -22,7 +22,6 @@
         android:layout_width="100dp"
         android:layout_height="110dp"
         android:clickable="false"
-        android:contentDescription="@string/zodiac_description"
         android:paddingStart="10dp"
         android:paddingTop="15dp"
         android:paddingEnd="10dp"
@@ -31,7 +30,8 @@
         app:layout_constraintEnd_toStartOf="@id/titleView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_z_big_leo" />
+        tools:src="Leo"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/titleView"
@@ -56,7 +56,7 @@
         tools:text="10.01.2018" />
 
     <TextView
-        android:id="@+id/text_status_zodiac"
+        android:id="@+id/sloganView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -74,15 +74,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <TextView
-        android:id="@+id/testTextView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="DEFAULT"
-        android:textColor="@android:color/holo_red_dark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

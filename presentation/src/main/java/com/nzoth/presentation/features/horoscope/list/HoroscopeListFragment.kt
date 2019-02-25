@@ -19,6 +19,18 @@ class HoroscopeListFragment : BaseFragment(), HoroscopeListContract.View {
     }
 
     override fun setMessage(text: String) {
-        testTextView?.text = text
+    }
+
+//    override fun setZodiac(name: String, date: String, slogan: String) {
+//        titleView.text = name
+//        dateView.text = date
+//        sloganView.text = slogan
+//    }
+
+    override fun setZodiac(iconRes: Int, nameRes: Int, dateRes: Int, sloganRes: Int) {
+        imageView.setImageResource(iconRes)
+        titleView.setText(nameRes)
+        dateView.setText(dateRes)
+        sloganView.setText(sloganRes)
     }
 }
