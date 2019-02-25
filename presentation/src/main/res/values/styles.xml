@@ -1,9 +1,12 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    </style>
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar"/>
 
-    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@drawable/bg_splash</item>
+    <style name="ZodiacGridTextView">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:layout_gravity">fill_horizontal</item>
+        <item name="android:textSize">12sp</item>
     </style>
 </resources>

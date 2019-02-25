@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_change_horoscope"
+        android:textColor="@color/colorWhite" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:useDefaultMargins="true">
+
+        <TextView
+            android:id="@+id/aquariusView"
+            style="@style/ZodiacGridTextView"
+            android:drawableTop="@drawable/ic_z_small_aquarius"
+            android:text="@string/aquarius" />
+
+        <TextView
+            android:id="@+id/piscesView"
+            style="@style/ZodiacGridTextView"
+            android:drawableTop="@drawable/ic_z_small_pisces"
+            android:text="@string/pisces" />
+
+        <TextView
+            android:id="@+id/ariesView"
+            style="@style/ZodiacGridTextView"
+            android:drawableTop="@drawable/ic_z_small_aries"
+            android:text="@string/aries" />
+
+        <TextView
+            android:id="@+id/taurusView"
+            style="@style/ZodiacGridTextView"
+            android:drawableTop="@drawable/ic_z_small_taurus"
+            android:text="@string/taurus" />
+
+        <TextView
+            android:id="@+id/geminiView"
+            style="@style/ZodiacGridTextView"
+            android:drawableTop="@drawable/ic_z_small_gemini"
+            android:text="@string/gemini" />
+
+        <TextView
+            android:id="@+id/cancerView"
+            style="@style/ZodiacGridTextView"
+            android:drawableTop="@drawable/ic_z_small_cancer"
+            android:text="@string/cancer" />
+
+        <TextView
+            android:id="@+id/leoView"
+            style="@style/ZodiacGridTextView"
+            android:drawableTop="@drawable/ic_z_small_leo"
+            android:text="@string/leo" />
+
+        <TextView
+            android:id="@+id/virgoView"
+            style="@style/ZodiacGridTextView"
+            android:drawableTop="@drawable/ic_z_small_virgo"
+            android:text="@string/virgo" />
+
+        <TextView
+            android:id="@+id/libraView"
+            style="@style/ZodiacGridTextView"
+            android:drawableTop="@drawable/ic_z_small_libra"
+            android:text="@string/libra" />
+
+        <TextView
+            android:id="@+id/scorpioView"
+            style="@style/ZodiacGridTextView"
+            android:drawableTop="@drawable/ic_z_small_scorpio"
+            android:text="@string/scorpio" />
+
+        <TextView
+            android:id="@+id/sagittariusView"
+            style="@style/ZodiacGridTextView"
+            android:drawableTop="@drawable/ic_z_small_sagittarius"
+            android:text="@string/sagittarius" />
+
+        <TextView
+            android:id="@+id/capricornView"
+            style="@style/ZodiacGridTextView"
+            android:drawableTop="@drawable/ic_z_small_capricorn"
+            android:text="@string/capricorn" />
+    </GridLayout>
+
+</LinearLayout>

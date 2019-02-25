@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_color"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingTop="5dp">
+
+    <ImageView
+        android:id="@+id/image_zodiac"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp"
+        tools:src="@drawable/ic_z_big_leo" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            tools:text="Leo"
+            android:id="@+id/title_zodiac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tc_white"
+            android:textSize="30sp" />
+
+        <TextView
+            tools:text="10.01.2018"
+            android:id="@+id/date_zodiac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tc_white" />
+
+        <TextView
+            tools:text="Nyan nyan"
+            android:id="@+id/text_status_zodiac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textColor="@color/tc_white" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Horoscopus</string>
+
+    <string name="title_change_horoscope">Выберите свой гороскоп:</string>
+    <string name="download">Загрузка</string>
+
+    <!-- Menus -->
+    <string name="horoscopes">Гороскопы</string>
+    <string name="settings">Настройки</string>
+    <string name="refresh">Обновить</string>
+    <string name="compatibility">Совместимость</string>
+
+    <!-- Errors -->
+    <string name="error_internet">Ой, а у Вас не подключен интернет.</string>
+    <string name="error_server">Еще не появилась новая информация, попробуйте обновить позже.</string>
+
+    <!-- Days -->
+    <string name="yesterday">Вчера</string>
+    <string name="today">Сегодня</string>
+    <string name="tomorrow">Завтра</string>
+    <string name="week">Неделя</string>
+    <string name="month">Месяц</string>
+    <string name="year">Год</string>
+
+    <!-- About -->
+    <string name="about_text">О приложении</string>
+    <string name="about_title">О приложении Horoscopus</string>
+        <string name="version_app">Horoscopus v 1.1</string>
+    <string name="copyright">Copyright ©2015, Sluva</string>
+    <string name="version_app_old">Horoscopus v 1.1\n\nCopyright ©2015, Sluva</string>
+
+
+    <string name="something_wrong">Упс, что-то пошло не так.</string>
+</resources>

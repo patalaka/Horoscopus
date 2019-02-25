@@ -25,7 +25,7 @@
     <!-- About -->
     <string name="about_text">О приложении</string>
     <string name="about_title">О приложении Horoscopus</string>
-        <string name="version_app">Horoscopus v 1.1</string>
+    <string name="version_app">Horoscopus v 1.1</string>
     <string name="copyright">Copyright ©2015, Sluva</string>
     <string name="version_app_old">Horoscopus v 1.1\n\nCopyright ©2015, Sluva</string>
 
